@@ -73,7 +73,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-groq-purple"
+          className="md:hidden text-[#508CA4]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -107,7 +107,7 @@ const NavLinks = ({
 }) => {
   const linkStyle =
     isScrolled || isMobile
-      ? "text-groq-dark-blue hover:text-groq-purple transition-colors"
+      ? "text-[#508CA4] hover:text-[#508CA4]/80 transition-colors"
       : "text-white/90 hover:text-white transition-colors";
 
   const linkClasses = `${linkStyle} font-medium ${
