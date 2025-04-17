@@ -94,12 +94,12 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={20} />
-                {/* <a
-                  href="mailto:osama@groqify.com"
+                <a
+                  href="mailto:contact@groqify.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  osama@groqify.com
-                </a> */}
+                  contact@groqify.com
+                </a>
               </li>
             </ul>
           </div>

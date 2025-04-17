@@ -43,7 +43,7 @@ const ProductDemo = () => {
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <div className="flex justify-center mb-8">
+          {/* <div className="flex justify-center mb-8">
             <TabsList className="bg-white/10 border border-white/20">
               <TabsTrigger
                 value="mobile"
@@ -60,7 +60,7 @@ const ProductDemo = () => {
                 Desktop Experiences
               </TabsTrigger>
             </TabsList>
-          </div>
+          </div> */}
 
           {/* <TabsContent value="mobile" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
