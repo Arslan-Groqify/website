@@ -9,13 +9,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -24,15 +19,7 @@ const Navbar = () => {
     const waitlistSection = document.getElementById("waitlist");
     if (waitlistSection) {
       waitlistSection.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false); // Close mobile menu if open
-    }
-  };
-
-  const scrollToHero = () => {
-    const heroSection = document.getElementById("hero");
-    if (heroSection) {
-      heroSection.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false); // Close mobile menu if open
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -43,11 +30,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div
-          onClick={scrollToHero}
-          className="flex items-center gap-2 cursor-pointer"
-        >
+        {/* Logo (Now routes to Home page) */}
+        <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <div className="h-10 w-10 rounded-full bg-[#508CA4] flex items-center justify-center shadow-lg">
             <span className="text-white font-display font-bold text-xl">G</span>
           </div>
@@ -58,7 +42,7 @@ const Navbar = () => {
           >
             Groqify
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
@@ -110,25 +94,14 @@ const NavLinks = ({
       ? "text-[#508CA4] hover:text-[#508CA4]/80 transition-colors"
       : "text-white/90 hover:text-white transition-colors";
 
-  const linkClasses = `${linkStyle} font-medium ${
-    isMobile ? "text-lg py-2" : ""
-  }`;
+  const linkClasses = `${linkStyle} font-medium ${isMobile ? "text-lg py-2" : ""}`;
 
   return (
     <>
-      <a href="#about" className={linkClasses}>
-        About
-      </a>
-      {/* <a href="#technology" className={linkClasses}>Technology</a> */}
-      <a href="#products" className={linkClasses}>
-        Products
-      </a>
-      <a href="#team" className={linkClasses}>
-        Team
-      </a>
-      <a href="#contact" className={linkClasses}>
-        Contact
-      </a>
+      <Link to="/about" className={linkClasses}>About</Link>
+      <Link to="/products" className={linkClasses}>Products</Link>
+      <Link to="/team" className={linkClasses}>Team</Link>
+      <Link to="/contact" className={linkClasses}>Contact</Link>
     </>
   );
 };
